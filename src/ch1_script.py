@@ -34,6 +34,8 @@ def frange(x, y, jump):
     yield x
     x += jump
 
+train_data(1, 1)
+
 print 'running . . . '
 
 learning_rates = frange(eta_0, eta_f, eta_jump)

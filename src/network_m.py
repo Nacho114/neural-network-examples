@@ -46,6 +46,7 @@ class Network_m(object):
     # Matrix based SGD
     def SGD(self, training_data, epochs, mini_batch_size, eta,
             test_data=None):
+
         self.set_matrix_biases(mini_batch_size)
         if test_data: n_test = len(test_data)
         n = len(training_data)
@@ -66,6 +67,8 @@ class Network_m(object):
     def SGD_GET_DATA(self, training_data, epochs, mini_batch_size, eta,
             test_data=None):
         """SGD to test performance"""
+
+
         self.set_matrix_biases(mini_batch_size)
         if test_data: n_test = len(test_data)
         n = len(training_data)
@@ -104,10 +107,13 @@ class Network_m(object):
         nabla_w = [np.zeros(w.shape) for w in self.weights]
 
         n_samples = len(x)
+        #print len(x)
+        #print x[0].shape
+        #print len(y)
+        print y[0].shape
         # Turn list of vectors into corresponding matrices
         X = np.column_stack(x)
         Y = np.column_stack(y)
-
         # feedforward (z is now a matrix where each column
         # is the z as in the simple implementation)
         activation = X
